@@ -1,0 +1,3 @@
+
+CREATE DATABASE IF NOT EXISTS manager_student;
+DROP DATABASE IF EXISTS manager_student;
