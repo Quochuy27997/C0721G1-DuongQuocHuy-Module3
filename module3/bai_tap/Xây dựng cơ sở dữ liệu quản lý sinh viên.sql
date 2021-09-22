@@ -1,0 +1,13 @@
+DROP DATABASE IF EXISTS manager_student;
+CREATE DATABASE IF NOT EXISTS manager_student;
+USE manager_student;
+CREATE TABLE class(
+`id` INT NOT NULL PRIMARY KEY,
+`name` VARCHAR(45) NULL
+);
+CREATE TABLE teacher(
+`id` INT NOT NULL PRIMARY KEY,
+`name` VARCHAR(45) NULL,
+`age` INT NULL,
+`country` VARCHAR(45) NULL
+);
