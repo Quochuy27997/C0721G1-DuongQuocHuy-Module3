@@ -1,21 +1,21 @@
-USE QuanLySinhVien;
-SELECT * FROM Student;
+USE quan_li_sinh_vien;
+SELECT * FROM student;
 
 SELECT *
-FROM Student
-WHERE Status = true;
+FROM student
+WHERE status = true;
 
 SELECT *
-FROM Subject
-WHERE Credit < 10;
+FROM subject
+WHERE credit < 10;
 
-SELECT S.StudentId, S.StudentName, C.ClassName
-FROM Student S join Class C on S.ClassId = C.ClassID;
+SELECT s.student_id, s.student_name, c.class_name
+FROM student s join class c on s.class_id = c.class_id;
 
-SELECT S.StudentId, S.StudentName, C.ClassName
-FROM Student S join Class C on S.ClassId = C.ClassID
-WHERE C.ClassName = 'A1';
+SELECT s.student_id, s.student_name, c.class_name
+FROM student s join class c on s.class_id = c.class_id
+WHERE c.class_name = 'A1';
 
-SELECT S.StudentId, S.StudentName, Sub.SubName, M.Mark
-FROM Student S join Mark M on S.StudentId = M.StudentId join Subject Sub on M.SubId = Sub.SubId
-WHERE Sub.SubName = 'CF';
+SELECT  s.student_id,s.student_name, sub.sub_name, m.mark
+FROM student s join mark m on s.student_id = m.student_id join Subject sub on m.sub_id = sub.sub_id
+WHERE sub.sub_name = 'CF';
