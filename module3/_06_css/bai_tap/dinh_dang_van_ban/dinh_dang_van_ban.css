@@ -1,0 +1,13 @@
+h1{
+    color: black;
+    font-family: Tahoma;
+    font-size: 150%;
+}
+p{
+    text-align:left;
+    font-family: Tahoma;
+    font-size: 100%;
+}
+a{
+    color: blue;
+}
