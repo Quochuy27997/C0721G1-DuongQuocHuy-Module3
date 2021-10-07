@@ -12,6 +12,10 @@
 </head>
 <body>
 <h2>product_description</h2>
+<h3>product_description:${product_description}</h3>
+<h3>list_price:${list_price}</h3>
+<h3>discount_percent:${discount_percent}</h3>
 <h3>discount_amount:${discount_amount}</h3>
 <h3>discount_price:${discount_price}</h3>
+</body>
 </html>

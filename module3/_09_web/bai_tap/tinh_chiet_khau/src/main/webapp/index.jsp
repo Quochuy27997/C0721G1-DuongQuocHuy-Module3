@@ -11,6 +11,12 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <h1>Product Discount Calculator</h1>
+  <form method="post" action="/discount">
+    <input type="text" name="product_description" placeholder="Enter product description: "><br>
+    <input type="text" name="list_price" placeholder="Enter list price: "><br>
+    <input type="text" name="discount_percent" placeholder="Enter discount percent (%): "><br>
+    <input type="submit" id="submit" value="Calculate Discount">
+  </form>
   </body>
 </html>
