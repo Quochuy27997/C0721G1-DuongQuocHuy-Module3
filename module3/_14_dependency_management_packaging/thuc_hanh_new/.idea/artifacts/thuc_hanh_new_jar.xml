@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="thuc_hanh_new:jar">
+    <output-path>$PROJECT_DIR$</output-path>
+    <root id="archive" name="thuc_hanh_new.jar">
+      <element id="module-output" name="thuc_hanh_new" />
+    </root>
+  </artifact>
+</component>
