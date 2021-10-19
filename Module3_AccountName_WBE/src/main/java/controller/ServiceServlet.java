@@ -1,11 +1,10 @@
 package controller;
 
 import model.bean.*;
-import model.service.ICustomerTypeService;
+
 import model.service.IRentTypeService;
 import model.service.IServiceService;
 import model.service.IServiceTypeService;
-import model.service.implement.CustomerTypeServiceImpl;
 import model.service.implement.RentTypeServiceImpl;
 import model.service.implement.ServiceServiceImpl;
 import model.service.implement.ServiceTypeServiceImpl;
@@ -21,8 +20,8 @@ import java.util.List;
 
 @WebServlet(name = "ServiceServlet", value = "/service")
 public class ServiceServlet extends HttpServlet {
-
     IServiceService iServiceService = new ServiceServiceImpl();
+
     IServiceTypeService iServiceTypeService = new ServiceTypeServiceImpl();
     IRentTypeService iRentTypeService = new RentTypeServiceImpl();
 
@@ -48,19 +47,17 @@ public class ServiceServlet extends HttpServlet {
 
     private void createService(HttpServletRequest request, HttpServletResponse response) {
         String service_name = request.getParameter("service_name");
-
         int service_area = Integer.parseInt(request.getParameter("service_area"));
         double service_cost = Double.parseDouble(request.getParameter("service_cost"));
         int service_max_people = Integer.parseInt(request.getParameter("service_max_people"));
         int rent_type_id = Integer.parseInt(request.getParameter("rent_type_id"));
         int service_type_id = Integer.parseInt(request.getParameter("service_type_id"));
-
-
         String standard_room = request.getParameter("standard_room");
         String description = request.getParameter("description");
         double pool_area = Double.parseDouble(request.getParameter("pool_area"));
         int number_of_floors = Integer.parseInt(request.getParameter("number_of_floors"));
-        Service service = new Service(service_name, service_area, service_cost, service_max_people, rent_type_id, service_type_id, standard_room, description,pool_area,number_of_floors);
+        Service service = new Service(service_name, service_area, service_cost, service_max_people, rent_type_id,
+                                      service_type_id, standard_room, description,pool_area,number_of_floors);
         iServiceService.save(service);
         RequestDispatcher dispatcher = request.getRequestDispatcher("service/create.jsp");
         request.setAttribute("message", "Thêm mới thành công  !");

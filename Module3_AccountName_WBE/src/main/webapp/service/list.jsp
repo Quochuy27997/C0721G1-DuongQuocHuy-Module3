@@ -30,10 +30,10 @@
 </h4>
 
 
-
 <div align="center">
-    <table id="product" border="1" cellpadding="5">
+    <table id="service" border="1" cellpadding="5">
         <caption><h2>List Service</h2></caption>
+        <thead>
         <tr>
             <th>Id</th>
             <th>Name service</th>
@@ -47,6 +47,8 @@
             <th>pool_area</th>
             <th>number_of_floors</th>
         </tr>
+        </thead>
+        <tbody>
         <c:forEach var="service" items="${listService}">
             <tr>
                 <td>${service.service_id}</td>
@@ -55,9 +57,24 @@
 
                 <td>${service.service_cost}</td>
                 <td>${service.service_max_people}</td>
-                <td>${service.rent_type_id}</td>
+                <td>
+                    <c:choose>
+                        <c:when test="${service.rent_type_id == 1}">Năm</c:when>
+                        <c:when test="${service.rent_type_id == 2}">Tháng</c:when>
+                        <c:when test="${service.rent_type_id == 3}">Ngày</c:when>
+                        <c:when test="${service.rent_type_id== 4}">Giờ</c:when>
 
-                <td>${service.service_type_id}</td>
+                    </c:choose>
+                </td>
+                <td>
+                    <c:choose>
+                        <c:when test="${service.service_type_id == 1}">Room</c:when>
+                        <c:when test="${service.service_type_id == 2}">House</c:when>
+                        <c:when test="${service.service_type_id == 3}">Villa</c:when>
+
+                    </c:choose>
+                </td>
+
                 <td>${service.standard_room}</td>
                 <td>${service.description}</td>
                 <td>${service.pool_area}</td>
@@ -66,6 +83,7 @@
 
             </tr>
         </c:forEach>
+        </tbody>
     </table>
 </div>
 
@@ -76,5 +94,14 @@
 <script src="/assert/bootstrap413/js/bootstrap.min.js"></script>
 <script src="/assert/bootstrap413/js/bootstrap.bundle.js"></script>
 
+<script>
+    $(document).ready(function () {
+        $('#service').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 2
+        })
+    })
+</script>
 </body>
 </html>

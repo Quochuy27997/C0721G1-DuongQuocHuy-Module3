@@ -16,7 +16,9 @@ public class ServiceRespositoryImpl implements IServiceRespository {
 
 
     private static final String SELECT_ALL_SERVICES = "SELECT * FROM service";
-    private static final String INSERT_NEW_SERVICES = "INSERT INTO service (service_name, service_area, service_cost, service_max_people, rent_type_id, service_type_id, standard_room, description_other_convenience, pool_area, number_of_floors) VALUES (?,?,?,?,?,?,?,?,?,?);";
+    private static final String INSERT_NEW_SERVICES = "INSERT INTO service (service_name, service_area, service_cost, " +
+            "service_max_people, rent_type_id, service_type_id, standard_room, description_other_convenience, pool_area," +
+            " number_of_floors) VALUES (?,?,?,?,?,?,?,?,?,?);";
 
     @Override
     public List<Service> findAll() {
@@ -70,7 +72,7 @@ public class ServiceRespositoryImpl implements IServiceRespository {
     public void save(Service service) {
         Connection connection = DBConnection.getConnection();
         PreparedStatement preparedStatement = null;
-
+        Service service1 = service;
         if (connection != null) {
             try {
                 preparedStatement = connection.prepareStatement(INSERT_NEW_SERVICES);

@@ -24,6 +24,7 @@ public class ServiceServiceImpl implements IServiceService {
 
     @Override
     public void save(Service service) {
-
+        Service service1 = service;
+        iServiceRespository.save(service);
     }
 }

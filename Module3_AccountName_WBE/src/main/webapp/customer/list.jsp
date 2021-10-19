@@ -14,6 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assert/bootstrap413/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assert/datatables/css/dataTables.bootstrap4.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 </head>
 <body>
 <h4>
@@ -40,8 +47,9 @@
 </h4>
 <c:if test="${message!=null}"><p>${message}</p></c:if>
 <div align="center">
-    <table id="product" border="1" cellpadding="5">
+    <table id="customer" border="1" cellpadding="5">
         <caption><h2>List of Customer</h2></caption>
+        <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
@@ -55,6 +63,8 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
+        </thead>
+       <tbody>
         <c:forEach var="customer" items="${listCustomer}">
             <tr>
                 <td>${customer.id}</td>
@@ -91,6 +101,7 @@
                 </td>
             </tr>
         </c:forEach>
+       </tbody>
     </table>
 </div>
 
@@ -118,7 +129,15 @@
         </div>
     </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
+        integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
+        crossorigin="anonymous"></script>
 <script src="/assert/jquery/jquery-3.5.1.min.js"></script>
 <script src="/assert/bootstrap413/js/popper.min.js"></script>
 <script src="/assert/datatables/js/jquery.dataTables.min.js"></script>
@@ -128,7 +147,7 @@
 
 <script>
     $(document).ready(function () {
-        $('#product').dataTable({
+        $('#customer').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
             "pageLength": 2

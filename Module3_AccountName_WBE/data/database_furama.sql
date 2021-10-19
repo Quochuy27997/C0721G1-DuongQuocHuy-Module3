@@ -137,3 +137,5 @@ INSERT INTO `furama_database`.`rent_type` (`rent_type_id`, `rent_type_name`, `re
 INSERT INTO `furama_database`.`rent_type` (`rent_type_id`, `rent_type_name`, `rent_type_cost`) VALUES ('4', 'Giờ', '350');
 INSERT INTO `furama_database`.`service` (`service_id`, `service_name`, `service_area`, `service_cost`, `service_max_people`, `rent_type_id`, `service_type_id`, `standard_room`, `description_other_convenience`, `pool_area`, `number_of_floors`) VALUES ('1', 'villa', '300', '5000', '8', '1', '3', '5', 'verry good', '20', '3');
 
+Select*from service;
+INSERT INTO `furama_database`.`service` (`service_id`, `service_name`, `service_area`, `service_cost`, `service_max_people`, `rent_type_id`, `service_type_id`, `standard_room`, `description_other_convenience`, `pool_area`, `number_of_floors`) VALUES ('2', 'house', '300', '4000', '1', '2', '2', '4', 'good', '15', '1');

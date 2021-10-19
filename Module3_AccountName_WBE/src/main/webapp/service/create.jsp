@@ -54,7 +54,7 @@
             <tr>
                 <th>Rent Type:</th>
                 <td>
-                    <select class="form-select" name="rent" aria-label="Default select example">
+                    <select class="form-select" name="rent_type_id" aria-label="Default select example">
                         <option selected>Choose type of rent</option>
                         <c:forEach var="type" items="${rentTypeList}">
                             <option value="${type.rent_type_id}">${type.rent_type_name}</option>
